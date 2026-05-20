@@ -14,7 +14,7 @@
 | H0.2 | Levantamento de requisitos | Equipe | 11/05 |
 | H0.3 | Definição das tecnologias | Equipe | 12/05 |
 | H0.4 | Criação do repositório Git | Professor | 12/05 |
-| H0.5 | Configuração do ambiente de desenvolvimento | Giovanni | 13/05 |
+| H0.5 | Configuração do ambiente de desenvolvimento | Geovane | 13/05 |
 | H0.6 | Criação do banco de dados inicial e estruturação inicial do projeto | Guilherme | 18/05 |
 | H0.7 | Criação do backlog de histórias | Gustavo | 19/05 |
 | H0.8 | Revisão e validação do Sprint 0 | Professor | - |
