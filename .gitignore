@@ -1,1 +1,320 @@
-venv
+# =========================================================
+# ROOT / GENERAL
+# =========================================================
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Temp
+tmp/
+temp/
+.tmp/
+.cache/
+.cache-loader/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+
+# Env files
+.env
+.env.*
+!.env.example
+!.env.production.example
+!.env.development.example
+!.env.test.example
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# =========================================================
+# NODE.JS
+# =========================================================
+
+node_modules/
+jspm_packages/
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional:
+# Descomente se quiser versionar lockfiles
+# !package-lock.json
+# !yarn.lock
+# !pnpm-lock.yaml
+
+# npm cache
+.npm/
+
+# pnpm
+.pnpm-store/
+
+# Yarn
+.yarn/
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Build
+dist/
+build/
+out/
+
+# Bundlers
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+
+# Vite
+vite.svg
+
+# =========================================================
+# TYPESCRIPT
+# =========================================================
+
+*.tsbuildinfo
+
+# TypeDoc
+documentation/
+
+# =========================================================
+# HTML / FRONTEND
+# =========================================================
+
+# Static build outputs
+public/build/
+public/dist/
+www/
+static/
+
+# Minified files
+*.min.css
+*.min.js
+
+# Sourcemaps
+*.map
+
+# =========================================================
+# SCSS / SASS
+# =========================================================
+
+.sass-cache/
+*.css.map
+
+# =========================================================
+# SQLITE
+# =========================================================
+
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.sqlite-journal
+
+# Sequelize / Prisma generated DBs
+dev.db
+dev.sqlite
+
+# =========================================================
+# NESTJS
+# =========================================================
+
+# Nest build
+dist/
+
+# Nest CLI
+.nestcli.json
+
+# Compodoc
+documentation/
+
+# Testing
+coverage/
+
+# =========================================================
+# TESTS
+# =========================================================
+
+# Jest
+jest-html-reporters-*
+junit.xml
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Playwright
+playwright-report/
+test-results/
+
+# =========================================================
+# DOCKER
+# =========================================================
+
+# Docker overrides
+docker-compose.override.yml
+
+# Docker volumes
+docker-data/
+volumes/
+
+# Local container configs
+*.env.docker
+
+# =========================================================
+# DATABASE / ORM
+# =========================================================
+
+# Prisma
+prisma/*.db
+prisma/*.sqlite
+prisma/migrations/dev.db
+
+# TypeORM
+typeorm.log
+
+# =========================================================
+# CACHE
+# =========================================================
+
+.eslintcache
+.stylelintcache
+
+# Babel
+.babel-cache/
+
+# SWC
+.swc/
+
+# =========================================================
+# LINTERS / FORMATTERS
+# =========================================================
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettier-cache/
+
+# =========================================================
+# CI/CD
+# =========================================================
+
+# GitHub Actions artifacts
+.artifacts/
+
+# =========================================================
+# SECURITY
+# =========================================================
+
+# Local secrets
+*.secret
+*.secrets
+*.bak
+
+# Certificates
+certs/
+ssl/
+
+# =========================================================
+# MISC
+# =========================================================
+
+# Mac resource forks
+._*
+
+# Linux trash
+.Trash-*
+
+# Windows image cache
+ehthumbs.db
+
+# Local notes
+notes/
+todo.txt
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Generated files
+generated/
+.generated/
+
+# =========================================================
+# OPTIONAL (DESCOMENTE SE NECESSÁRIO)
+# =========================================================
+
+# Ignorar uploads locais
+# uploads/
+
+# Ignorar assets compilados
+# public/assets/
+
+# Ignorar migrations
+# prisma/migrations/
+
+# Ignorar arquivos de seed
+# seeds/
+
+# Ignorar docs geradas
+# docs/
+
+# =========================================================
+# KEEP IMPORTANT EMPTY DIRECTORIES
+# =========================================================
+
+!.gitkeep
