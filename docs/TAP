@@ -1,0 +1,117 @@
+TERMO DE ABERTURA DO PROJETO (TAP)
+1. Informações Gerais
+
+Nome do Projeto:
+SkillEx – Plataforma de Troca de Habilidades
+
+Sponsor do Projeto:
+- Rubens Lemos da Cruz Junior
+
+Representante do Grupo:
+- Geovane Alves da Silva
+
+Integrantes do Grupo:
+- Geovane Alves da Silva
+- Guilherme Otavio Amantino Vieira
+- Gustavo Henrique Felix Nobre Leal
+- Pablo Henrique de Jesus de Oliveira
+- Valéria Martins dos Santos
+- Vanessa Martins dos Santos
+
+Tema Principal:
+- SkillEx – Plataforma de Troca de Habilidades
+
+Tema de Backup:
+- HelpME – Plataforma web para conectar clientes e profissionais autônomos
+
+2. Visão do Projeto
+O SkillEx é uma plataforma web que conecta pessoas com diferentes habilidades e conhecimentos. O sistema permite que cada usuário informe as habilidades que domina e está disposto a ensinar, bem como aquelas que deseja aprender. Com base nessas informações, a plataforma identifica usuários compatíveis e promove uma troca colaborativa de conhecimentos, na qual uma pessoa ensina aquilo que sabe e aprende novas habilidades com outros participantes.
+Além disso, a plataforma oferece recursos para agendamento de sessões de aprendizado, chat e aulas online por meio de chamadas de vídeo integradas, permitindo que o processo de ensino e aprendizagem aconteça de forma prática, acessível e totalmente dentro do sistema.
+
+3. Problema/Oportunidade
+Muitas pessoas possuem habilidades valiosas e gostariam de compartilhá-las, enquanto outras desejam aprender novos conhecimentos, mas têm dificuldade para encontrar alguém disposto a ensinar. Atualmente, não existe uma solução simples e centralizada que conecte pessoas interessadas em trocar conhecimentos de forma colaborativa.
+O SkillEx surge como uma oportunidade para facilitar esse intercâmbio de habilidades, incentivando o aprendizado contínuo, o desenvolvimento pessoal e profissional e a criação de uma comunidade baseada na colaboração e na troca de experiências.
+
+4. Objetivo do Projeto
+- Desenvolver uma aplicação capaz de:
+- Cadastrar e autenticar usuários;
+- Permitir o registro de habilidades que o usuário pode ensinar;
+- Permitir o registro de habilidades que o usuário deseja aprender;
+- Identificar usuários com interesses compatíveis;
+- Sugerir conexões para troca de conhecimentos;
+- Disponibilizar chat para comunicação entre os usuários;
+- Agendar sessões de aprendizado;
+- Realizar aulas online por chamadas de vídeo integradas;
+- Registrar o histórico de interações e avaliações.
+
+5. Restrições do Projeto
+- Desenvolvimento limitado ao prazo acadêmico;
+- Disponibilidade parcial da equipe devido às atividades escolares;
+- Utilização de tecnologias gratuitas e open source;
+- Escopo limitado às funcionalidades essenciais do MVP.
+
+6. Principais Entregas
+Entrega:
+MVP
+Data:
+15/06/2026
+Entrega:
+Lançamento v1.0
+Data
+01/07/2026
+
+
+7. Funcionalidades Principais
+- Cadastro e login de usuários;
+- Cadastro de habilidades que podem ser ensinadas;
+- Cadastro de habilidades que desejam ser aprendidas;
+- Sistema de correspondência entre usuários;
+- Busca e filtros por categorias de habilidades;
+- Lista de usuários disponíveis para ensinar;
+- Agendamento de sessões de aprendizado;
+- Aulas online por meio de chamadas de vídeo integradas à plataforma;
+- Chat para troca de mensagens e envio de informações;
+- Histórico de trocas realizadas;
+- Avaliação dos participantes após cada sessão.
+
+8. Tecnologias Utilizadas
+- Front-end
+- HTML
+- CSS
+- TypeScript
+- Back-end
+- Node.js
+- NestJS
+- TypeScript
+- Banco de Dados
+- SQLite / PostgreSQL
+
+9. Benefícios Esperados
+- Facilitar o aprendizado colaborativo;
+- Permitir aulas online sem necessidade de aplicativos externos;
+- Incentivar a troca de conhecimentos entre pessoas de diferentes áreas;
+- Promover o desenvolvimento pessoal e profissional;
+- Criar uma comunidade colaborativa e engajada;
+- Valorizar e compartilhar competências individuais.
+
+10. Repositórios GitHub
+- Geovane: github.com/geovanelvs
+- Valéria: github.com/Valmartinssantos
+- Vanessa: github.com/Vans-n
+- Pablo: github.com/pablohenriquejs
+- Guilherme: github.com/guilhermevieirao
+- Gustavo: github.com/Gustavoleal007
+
+11. Aprovação
+Responsáveis
+Assinatura
+Sponsor do Projeto
+_____________________________________
+Data:
+___ / ___ / ______
+Representante do Grupo
+Assinatura:
+_____________________________________
+Data:
+___ / ___ / ______
+
