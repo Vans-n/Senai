@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillEx - Cadastro</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <!-- CONTAINER PRINCIPAL -->
+
+    <div class="login-container">
+
+        <!-- BANNER ESQUERDO -->
+
+        <div class="banner">
+
+            <h1>SkillEx</h1>
+
+            <p>
+                Faça parte da comunidade e comece a compartilhar conhecimentos.
+            </p>
+
+            <div class="card-info">
+                <h3>Compartilhe</h3>
+                <p>
+                    Ensine habilidades que você domina para outras pessoas.
+                </p>
+            </div>
+
+            <div class="card-info">
+                <h3>Aprenda</h3>
+                <p>
+                    Encontre pessoas dispostas a ensinar novas habilidades.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+
+        <div class="form-container">
+
+            <h2>Criar Conta</h2>
+
+            <p class="subtitle">
+                Preencha seus dados para começar.
+            </p>
+
+            <form id="cadastroForm">
+
+                <label for="nome">Nome Completo</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    placeholder="Confirme sua senha"
+                    required
+                >
+
+                <button type="submit">
+                    Criar Conta
+                </button>
+
+            </form>
+
+            <!-- LINK PARA LOGIN -->
+
+            <p class="register-text">
+                Já possui conta?
+                <a href="../login.html">
+                    Fazer Login
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- MSG DE SUCESSO -->
+
+    <div id="toast" class="toast">
+        ✅ Usuário criado com sucesso!
+    </div>
+
+    <!-- SCRIPT DE CADASTRO-->
+
+<script src="../usuario.js"></script>
+
+<script>
+
+const cadastroForm = document.getElementById("cadastroForm");
+
+cadastroForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const confirmarSenha = document.getElementById("confirmarSenha").value;
+
+    // Pelo menos 8 caracteres
+    if (senha.length < 8) {
+        alert("A senha deve ter pelo menos 8 caracteres.");
+        return;
+    }
+
+    // Pelo menos uma letra maiúscula
+    if (!/[A-Z]/.test(senha)) {
+        alert("A senha deve conter pelo menos uma letra maiúscula.");
+        return;
+    }
+
+    // Pelo menos um número
+    if (!/[0-9]/.test(senha)) {
+        alert("A senha deve conter pelo menos um número.");
+        return;
+    }
+
+    // Pelo menos um caractere especial
+    if (!/[!@#$%^&*(),.?\":{}|<>]/.test(senha)) {
+        alert("A senha deve conter pelo menos um caractere especial.");
+        return;
+    }
+
+    // Confirmação de senha
+    if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem.");
+        return;
+    }
+
+    const toast = document.getElementById("toast");
+
+    // Salva o usuário no localStorage
+    User.setLoggedUser({
+        nome: nome,
+        email: email,
+        senha: senha,
+        foto: 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+    });
+
+    toast.style.display = "block";
+
+    setTimeout(() => {
+        window.location.href = "../feed/feed.html";
+    }, 2000);
+
+});
+
+</script>
+
+</body>
+
+</html>

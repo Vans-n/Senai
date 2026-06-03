@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillEx - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="banner">
+
+            <h1>Skill<span>Ex</span></h1>
+
+            <p>
+                Conecte pessoas, compartilhe conhecimentos e aprenda novas habilidades através de uma comunidade colaborativa.
+            </p>
+
+            <div class="card-info">
+                <h3>Aprenda</h3>
+                <p>
+                    Descubra pessoas com habilidades que você deseja aprender.
+                </p>
+            </div>
+
+            <div class="card-info">
+                <h3>Ensine</h3>
+                <p>
+                    Compartilhe seu conhecimento com outros usuários.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="form-container">
+
+            <h2>Bem-vindo</h2>
+
+            <p class="subtitle">
+                Faça login para acessar sua conta.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+                <div class="options">
+
+                    <div class="remember">
+                        <input type="checkbox" id="lembrar">
+
+                        <label for="lembrar">
+                            Lembrar de mim
+                        </label>
+                    </div>
+
+                    <a href="./recuperar-senha/recuperar-senha.html">
+                        Esqueceu a senha?
+                    </a>
+
+                </div>
+
+                <button type="submit">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p class="register-text">
+                Ainda não possui conta?
+                <a href="./cadastro/cadastro.html">
+                    Criar conta
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="src/Pages/usuario.js"></script>
+
+    <script>
+        document
+            .getElementById("loginForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const email = document.getElementById("email").value;
+                const senha = document.getElementById("senha").value;
+
+                // Aqui você faria uma validação real contra um backend
+                // Por enquanto, apenas salvamos o usuário com os dados do formulário
+                User.setLoggedUser({
+                    nome: email.split('@')[0], // Usa a primeira parte do email como nome
+                    email: email,
+                    senha: senha,
+                    foto: 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+                });
+
+                window.location.href = "./src/Pages/feed/feed.html";
+
+            });
+    </script>
+
+</body>
+
+</html>

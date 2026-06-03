@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillEx - Feed</title>
+
+    <link rel="stylesheet" href="feed.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            Skill<span>Ex</span>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="text"
+                placeholder="Buscar pessoas, habilidades ou publicações..."
+            >
+        </div>
+
+        <div class="top-icons">
+            <i class="fa-solid fa-house active" id="homeIcon"></i>
+            <i class="fa-solid fa-user-group"></i>
+            <i class="fa-regular fa-bell"></i>
+
+            <div class="profile-menu">
+
+    <img
+        id="profileBtn"
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Perfil"
+    >
+
+    <div id="dropdownMenu" class="dropdown-menu">
+
+        <a href="../perfil/perfil.html">
+            <i class="fa-regular fa-user"></i>
+            Meu Perfil
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Configurações
+        </a>
+
+        <a href="#">
+            <i class="fa-regular fa-circle-question"></i>
+            Ajuda
+        </a>
+
+        <a href="../../login.html" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sair
+        </a>
+
+    </div>
+
+</div>
+        </div>
+
+    </header>
+
+    <main class="container">
+
+        <!-- MENU LATERAL -->
+
+        <aside class="sidebar">
+
+            <div class="menu-item active">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Habilidades</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-regular fa-star"></i>
+                <span>Sugestões</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Estudantes</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Agenda</span>
+            </div>
+
+            <div class="menu-item">
+                <i class="fa-regular fa-star"></i>
+                <span>Avaliações</span>
+            </div>
+
+        </aside>
+
+        <!-- FEED -->
+
+        <section class="feed">
+
+            <div class="create-post">
+
+                <div class="create-header">
+
+    <img
+        id="createPostAvatar"
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Avatar"
+    >
+
+    <textarea
+        id="postInput"
+        class="post-input"
+        placeholder="Faça uma publicação contando em qual matéria você precisa de ajuda ou pode ajudar alguém."
+    ></textarea>
+
+                </div>
+
+                <div class="create-actions">
+
+    <button type="button" id="imageBtn">
+        <i class="fa-regular fa-image"></i>
+        Imagem
+    </button>
+
+    <button type="button" id="locationBtn">
+        <i class="fa-solid fa-location-dot"></i>
+        Localização
+    </button>
+
+    <button type="button" id="categoryBtn">
+        <i class="fa-solid fa-tag"></i>
+        Categoria
+    </button>
+
+    <button type="button" id="privacyBtn">
+        <i class="fa-solid fa-earth-americas"></i>
+        Público
+    </button>
+
+</div>
+
+<input type="file" id="imageInput" accept="image/*" hidden>
+
+<div id="imagePreview" class="image-preview hidden"></div>
+
+<div id="optionPopup" class="option-popup hidden">
+    <div class="popup-card">
+        <button type="button" id="optionCloseBtn" class="popup-close">×</button>
+
+        <div id="locationPanel" class="post-option-panel hidden">
+            <h2>Localização</h2>
+            <label for="locationInput">Insira sua localização</label>
+            <input id="locationInput" type="text" placeholder="Ex: Campus, Rua ou Bairro">
+            <button type="button" id="locationSaveBtn">Salvar localização</button>
+        </div>
+
+        <div id="privacyPanel" class="post-option-panel hidden">
+            <h2>Visibilidade</h2>
+            <div class="privacy-options">
+                <label><input type="radio" name="privacy" value="Público" checked> Público</label>
+                <label><input type="radio" name="privacy" value="Apenas amigos"> Apenas amigos</label>
+            </div>
+        </div>
+
+        <div id="categoryPanel" class="post-option-panel hidden">
+            <h2>Categoria</h2>
+            <p>Em breve você poderá escolher categorias aqui.</p>
+        </div>
+    </div>
+</div>
+
+<div class="publish-area">
+    <button type="button" class="publish-btn" id="publishBtn">
+        <i class="fa-solid fa-paper-plane"></i>
+        Publicar
+    </button>
+</div>
+
+            </div>
+
+            <!-- POST -->
+
+            <div class="post">
+
+                <div class="post-header">
+
+                    <div class="user-info">
+
+                        <img
+                            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                            alt="Avatar"
+                        >
+
+                        <div>
+                            <h3>Valéria Santos</h3>
+                            <span>há 2 minutos</span>
+                        </div>
+
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                </div>
+
+                <div class="post-content">
+
+                    Tenho facilidade em Matemática financeira e posso ajudar
+                    com exercícios, explicações e revisões.
+
+                    <br><br>
+
+                    Em troca, gostaria de praticar e aprender Inglês com
+                    alguém que tenha conhecimento na área.
+
+                    <br><br>
+
+                    Se você se interessa por essa troca de conhecimento,
+                    vamos conversar!
+
+                </div>
+
+                <div class="post-actions">
+
+                    <button>
+                        <i class="fa-solid fa-plus"></i>
+                        Ajudar
+                    </button>
+
+                    <button>
+                        <i class="fa-solid fa-xmark"></i>
+                        Preciso de ajuda
+                    </button>
+
+                    <button>
+                        <i class="fa-solid fa-minus"></i>
+                        Dica
+                    </button>
+
+                    <button>
+                        <i class="fa-solid fa-share-nodes"></i>
+                        Compartilhar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../usuario.js"></script>
+    <script src="../navigation.js"></script>
+    <script src="feed.js"></script>
+
+</body>
+</html>
