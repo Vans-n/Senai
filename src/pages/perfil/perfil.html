@@ -84,28 +84,28 @@
 
             <div class="menu-item active">
                 <i class="fa-solid fa-bolt"></i>
-                <span>Habilidades</span>
+                <span>Feed</span>
             </div>
 
-            <div class="menu-item">
+            <a href="../sugestoes/sugestoes.html" class="menu-item">
                 <i class="fa-regular fa-star"></i>
                 <span>Sugestões</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../estudantes/estudantes.html" class="menu-item">
                 <i class="fa-solid fa-users"></i>
                 <span>Estudantes</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../agenda/agenda.html" class="menu-item">
                 <i class="fa-regular fa-calendar"></i>
                 <span>Agenda</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../avaliacoes/avaliacoes.html" class="menu-item">
                 <i class="fa-regular fa-star"></i>
                 <span>Avaliações</span>
-            </div>
+            </a>
 
         </aside>
 
@@ -129,11 +129,11 @@
                         <input type="file" id="profileInput" accept="image/*" style="display: none;">
                     </div>
 
-                    <h1>Valéria Santos</h1>
+                    <h1 id="profileName">Usuário</h1>
 
-                    <h3>Estudante de Contabilidade</h3>
+                    <h3 id="profileTitle">Estudante de Contabilidade</h3>
 
-                    <p>
+                    <p id="profileBio">
                         Sou estudante de Contabilidade e gosto de ajudar pessoas
                         com matemática financeira, organização financeira e Excel.
                         Também tenho interesse em aprender inglês e melhorar minha comunicação.
@@ -149,7 +149,7 @@
 
                 <h2>Habilidades que Ensino</h2>
 
-                <div class="skill-tags">
+                <div class="skill-tags" id="teachSkillsTags">
 
                     <span>Contabilidade</span>
                     <span>Excel</span>
@@ -160,7 +160,7 @@
 
                 <h2>Desejo Aprender</h2>
 
-                <div class="skill-tags">
+                <div class="skill-tags" id="learnSkillsTags">
 
                     <span>Inglês</span>
                     <span>Comunicação</span>
@@ -182,63 +182,55 @@
 
                     <p>Trocas realizadas: 12</p>
                     <p>Avaliações positivas: 98%</p>
-                    <p>Disponibilidade: Seg, Qua e Sex</p>
+                    <p>Disponibilidade: <span id="profileAvailability">Seg, Qua e Sex</span></p>
 
                 </div>
 
-                <!-- PUBLICAÇÃO -->
+                <!-- MINHAS POSTAGENS -->
 
-                <div class="post">
-
-                    <div class="post-header">
-
-                        <div class="user-info">
-
-                            <div class="mini-avatar">
-                                👩
-                            </div>
-
-                            <div>
-
-                                <h3>Valéria Santos</h3>
-
-                                <span>
-                                    há 2 horas
-                                </span>
-
-                            </div>
-
-                        </div>
-
+                <div class="profile-posts">
+                    <h3>Minhas Postagens</h3>
+                    <div id="profilePosts" class="posts-list">
+                        <p class="empty-state">Você ainda não publicou nada. Vá ao feed e crie sua primeira postagem.</p>
                     </div>
-
-                    <div class="post-content">
-
-                        Posso ajudar com exercícios de matemática financeira
-                        em troca de conversação em inglês.
-
-                    </div>
-
-                    <div class="post-actions">
-
-                        <button>
-                            ❤️
-                            Curtir
-                        </button>
-
-                        <button>
-                            💬
-                            Comentar
-                        </button>
-
-                    </div>
-
                 </div>
 
             </div>
 
         </main>
 
+    </div>
+
+    <div id="profileImageModal" class="profile-image-modal hidden">
+        <div class="profile-modal-overlay"></div>
+        <div class="profile-modal-card">
+            <button id="profileModalClose" class="modal-close">×</button>
+            <img id="profileImageModalImg" src="" alt="Imagem da publicação">
+        </div>
+    </div>
+
+    <div id="actionModal" class="action-modal hidden">
+        <div id="actionModalOverlay" class="action-modal-overlay"></div>
+        <div class="action-modal-card">
+            <button id="actionModalClose" class="modal-close">×</button>
+            <div class="action-modal-body">
+                <h3 id="actionModalTitle">Editar publicação</h3>
+                <p id="actionModalMessage">Edite o texto da publicação e clique em salvar.</p>
+                <div class="action-modal-image">
+                    <img id="actionModalImagePreview" src="" alt="Preview da imagem" class="hidden">
+                    <div class="action-modal-image-controls">
+                        <input id="actionModalImageInput" type="file" accept="image/*" />
+                        <button id="actionModalRemoveImage" class="secondary-btn">Remover imagem</button>
+                    </div>
+                </div>
+                <textarea id="actionModalTextarea" placeholder="Digite o conteúdo da publicação"></textarea>
+                <div id="actionModalBusy" class="action-modal-busy hidden">Compactando e enviando imagem...</div>
+                <div class="action-modal-footer">
+                    <button id="actionModalCancel" class="secondary-btn">Cancelar</button>
+                    <button id="actionModalConfirm" class="publish-btn">Salvar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -270,7 +262,7 @@
 
     <script src="../usuario.js"></script>
     <script src="../navigation.js"></script>
-    <script src="perfil.js"></script>
+    <script src="../perfil.js"></script>
 
 </body>
 

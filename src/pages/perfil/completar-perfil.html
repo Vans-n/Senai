@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillEx - Completar Perfil</title>
+
+    <link rel="stylesheet" href="completar-perfil.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="logo">
+                Skill<span>Ex</span>
+            </div>
+
+            <h1>Complete seu Perfil</h1>
+
+            <p class="subtitle">
+                Conte para a comunidade quais conhecimentos você pode compartilhar
+                e o que deseja aprender.
+            </p>
+
+            <div class="photo-section">
+
+                <div class="profile-photo">
+
+                    <img
+                        id="photoPreview"
+                        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                        alt="Perfil"
+                    >
+
+                    <label for="photoInput">
+                        <i class="fa-solid fa-camera"></i>
+                    </label>
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                    >
+
+                </div>
+
+            </div>
+
+            <form id="completarPerfilForm">
+
+                <div class="form-group">
+
+                    <label>Habilidades que Ensino</label>
+
+                    <input
+                        id="teachSkills"
+                        type="text"
+                        placeholder="Ex: Excel, Contabilidade, Inglês..."
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Desejo Aprender</label>
+
+                    <input
+                        id="learnSkills"
+                        type="text"
+                        placeholder="Ex: Marketing, Programação, Inglês..."
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Título</label>
+
+                    <input
+                        id="profileTitleInput"
+                        type="text"
+                        placeholder="Ex: Estudante de Contabilidade, Mentor de Excel..."
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Sobre Mim</label>
+
+                    <textarea
+                        id="aboutMe"
+                        rows="5"
+                        placeholder="Conte um pouco sobre você..."
+                    ></textarea>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Disponibilidade</label>
+
+                    <div class="checkbox-group">
+
+                        <label><input type="checkbox" name="availability" value="Segunda"> Segunda</label>
+                        <label><input type="checkbox" name="availability" value="Terça"> Terça</label>
+                        <label><input type="checkbox" name="availability" value="Quarta"> Quarta</label>
+                        <label><input type="checkbox" name="availability" value="Quinta"> Quinta</label>
+                        <label><input type="checkbox" name="availability" value="Sexta"> Sexta</label>
+                        <label><input type="checkbox" name="availability" value="Sábado"> Sábado</label>
+                        <label><input type="checkbox" name="availability" value="Domingo"> Domingo</label>
+
+                    </div>
+
+                </div>
+
+                <button type="submit" class="save-btn">
+                    Salvar Perfil
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="../usuario.js"></script>
+    <script>
+        (async function() {
+            if (!User.requireAuth()) {
+                return;
+            }
+
+            const photoInput = document.getElementById('photoInput');
+            const photoPreview = document.getElementById('photoPreview');
+            const completarForm = document.getElementById('completarPerfilForm');
+            const teachSkills = document.getElementById('teachSkills');
+            const learnSkills = document.getElementById('learnSkills');
+            const profileTitleInput = document.getElementById('profileTitleInput');
+            const aboutMe = document.getElementById('aboutMe');
+            const availabilityInputs = document.querySelectorAll('input[name="availability"]');
+
+        const user = User.getLoggedUser();
+        if (user) {
+            if (teachSkills) teachSkills.value = user.teachSkills || '';
+            if (learnSkills) learnSkills.value = user.learnSkills || '';
+            if (profileTitleInput) profileTitleInput.value = user.title || '';
+            if (aboutMe) aboutMe.value = user.about || '';
+            if (photoPreview && (user.foto || user.photo)) {
+                photoPreview.src = user.foto || user.photo;
+            }
+            if (Array.isArray(user.availability)) {
+                availabilityInputs.forEach(input => {
+                    input.checked = user.availability.includes(input.value);
+                });
+            }
+        }
+
+        if (photoInput && photoPreview) {
+            photoInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                if (!file.type.startsWith('image/')) {
+                    alert('Por favor, selecione uma imagem válida');
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    photoPreview.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        if (completarForm) {
+            completarForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                const selectedAvailability = Array.from(availabilityInputs)
+                    .filter(input => input.checked)
+                    .map(input => input.value);
+
+                const profileData = {
+                    teachSkills: teachSkills ? teachSkills.value.trim() : '',
+                    learnSkills: learnSkills ? learnSkills.value.trim() : '',
+                    title: profileTitleInput ? profileTitleInput.value.trim() : '',
+                    about: aboutMe ? aboutMe.value.trim() : '',
+                    availability: selectedAvailability,
+                    profileCompleted: true
+                };
+
+                if (photoPreview && photoPreview.src && photoPreview.src.startsWith('data:')) {
+                    profileData.photo = photoPreview.src;
+                }
+
+                try {
+                    const res = await User.apiFetch('/api/users/me', {
+                        method: 'PATCH',
+                        body: JSON.stringify(profileData)
+                    });
+
+                    if (!res.ok) {
+                        const err = await res.json().catch(() => ({}));
+                        alert(err.error || 'Erro ao salvar perfil');
+                        return;
+                    }
+
+                    const updatedUser = await res.json();
+                    if (updatedUser && updatedUser.profileCompleted !== true) {
+                        updatedUser.profileCompleted = true;
+                    }
+                    User.setLoggedUser(updatedUser);
+                    User.showToast('Perfil salvo com sucesso', 'success');
+                    window.location.replace(User.getAppUrl('/feed/feed.html'));
+                    return;
+                } catch (e) {
+                    console.error(e);
+                    User.showToast('Erro ao salvar perfil', 'error');
+                }
+            });
+        }
+        })();
+    </script>
+
+</body>
+</html>

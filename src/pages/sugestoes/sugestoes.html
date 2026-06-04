@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SkillEx - Sugestões</title>
+
+    <link rel="stylesheet" href="sugestoes.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="logo">
+        Skill<span>Ex</span>
+    </div>
+
+    <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+            type="text"
+            placeholder="Buscar pessoas, habilidades ou publicações..."
+        >
+    </div>
+
+    <div class="top-icons">
+        <i class="fa-solid fa-house" id="homeIcon"></i>
+        <i class="fa-solid fa-user-group"></i>
+        <i class="fa-regular fa-bell"></i>
+
+        <div class="profile-menu">
+
+    <img
+        id="profileBtn"
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Perfil"
+    >
+
+    <div id="dropdownMenu" class="dropdown-menu">
+
+        <a href="../perfil/perfil.html">
+            <i class="fa-regular fa-user"></i>
+            Meu Perfil
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            Configurações
+        </a>
+
+        <a href="#">
+            <i class="fa-regular fa-circle-question"></i>
+            Ajuda
+        </a>
+
+        <a href="../../login.html" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Sair
+        </a>
+
+    </div>
+
+</div>
+    </div>
+
+</header>
+
+<main class="container">
+
+    <!-- MENU LATERAL -->
+
+    <aside class="sidebar">
+
+        <div class="menu-item active">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Feed</span>
+        </div>
+
+        <a href="../sugestoes/sugestoes.html" class="menu-item">
+            <i class="fa-regular fa-star"></i>
+            <span>Sugestões</span>
+        </a>
+
+        <a href="../estudantes/estudantes.html" class="menu-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Estudantes</span>
+        </a>
+
+        <a href="../agenda/agenda.html" class="menu-item">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Agenda</span>
+        </a>
+
+        <a href="../avaliacoes/avaliacoes.html" class="menu-item">
+            <i class="fa-regular fa-star"></i>
+            <span>Avaliações</span>
+        </a>
+
+    </aside>
+
+    <!-- CONTEUDO PRINCIPAL -->
+
+    <section class="feed suggestions-container">
+
+        <section class="hero">
+
+        <h1>Sugestões para Você</h1>
+
+        <p>
+            Encontramos pessoas compatíveis com seus interesses de aprendizado e ensino.
+        </p>
+
+    </section>
+
+    <!-- RESUMO -->
+
+    <section class="summary">
+
+        <div class="summary-card">
+            <i class="fa-solid fa-user-group"></i>
+            <h2>12</h2>
+            <span>Novas conexões</span>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-bolt"></i>
+            <h2>95%</h2>
+            <span>Maior compatibilidade</span>
+        </div>
+
+        <div class="summary-card">
+            <i class="fa-solid fa-book"></i>
+            <h2>8</h2>
+            <span>Habilidades em comum</span>
+        </div>
+
+    </section>
+
+    <!-- SUGESTÕES -->
+
+    <section class="suggestions-list">
+
+        <div class="suggestion-card">
+
+            <div class="profile">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+                <div>
+                    <h3>João Silva</h3>
+
+                    <span class="match">
+                        95% Compatível
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="skills">
+
+                <span>Ensina Inglês</span>
+                <span>Aprende Matemática</span>
+
+            </div>
+
+            <p>
+                João pode te ajudar com Inglês e procura alguém
+                que ensine Matemática Financeira.
+            </p>
+
+            <button>
+                Conectar
+            </button>
+
+        </div>
+
+        <div class="suggestion-card">
+
+            <div class="profile">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+                <div>
+                    <h3>Ana Costa</h3>
+
+                    <span class="match">
+                        89% Compatível
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="skills">
+
+                <span>Ensina Violão</span>
+                <span>Aprende Espanhol</span>
+
+            </div>
+
+            <p>
+                Ana está disponível para troca de conhecimentos
+                e possui horários compatíveis com os seus.
+            </p>
+
+            <button>
+                Conectar
+            </button>
+
+        </div>
+
+        <div class="suggestion-card">
+
+            <div class="profile">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+
+                <div>
+                    <h3>Pedro Almeida</h3>
+
+                    <span class="match">
+                        82% Compatível
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="skills">
+
+                <span>Ensina Python</span>
+                <span>Aprende Design</span>
+
+            </div>
+
+            <p>
+                Pedro procura alguém para ajudá-lo com UI/UX
+                enquanto ensina programação.
+            </p>
+
+            <button>
+                Conectar
+            </button>
+
+        </div>
+
+    </section>
+
+    </section>
+
+</main>
+
+<!-- POPUP: Conexões (User-Group) -->
+<div id="connectionsPopup" class="popup hidden">
+
+    <div class="popup-card">
+
+        <button type="button" id="connectionsCloseBtn" class="popup-close">×</button>
+
+        <h2>Pedidos de Conexão</h2>
+
+        <div id="connectionsList" class="connections-list">
+            <p class="empty-state">Nenhum pedido de conexão no momento</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- POPUP: Notificações (Bell) -->
+<div id="notificationsPopup" class="popup hidden">
+
+    <div class="popup-card">
+
+        <button type="button" id="notificationsCloseBtn" class="popup-close">×</button>
+
+        <h2>Notificações</h2>
+
+        <div id="notificationsList" class="notifications-list">
+            <p class="empty-state">Nenhuma notificação no momento</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../usuario.js"></script>
+<script>
+    User.requireAuth();
+</script>
+<script src="../navigation.js"></script>
+
+<script>
+
+    // Dropdown menu toggle
+    const profileBtn = document.getElementById('profileBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    if (profileBtn && dropdownMenu) {
+        profileBtn.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!profileBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    }
+
+    // Connections popup toggle
+    const userGroupIcon = document.querySelector('.top-icons .fa-user-group');
+    const connectionsPopup = document.getElementById('connectionsPopup');
+    const connectionsCloseBtn = document.getElementById('connectionsCloseBtn');
+
+    if (userGroupIcon && connectionsPopup) {
+        userGroupIcon.style.cursor = 'pointer';
+        userGroupIcon.addEventListener('click', function() {
+            connectionsPopup.classList.toggle('hidden');
+        });
+
+        connectionsCloseBtn.addEventListener('click', function() {
+            connectionsPopup.classList.add('hidden');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!userGroupIcon.contains(event.target) && !connectionsPopup.contains(event.target)) {
+                connectionsPopup.classList.add('hidden');
+            }
+        });
+    }
+
+    // Notifications popup toggle
+    const bellIcon = document.querySelector('.top-icons .fa-bell');
+    const notificationsPopup = document.getElementById('notificationsPopup');
+    const notificationsCloseBtn = document.getElementById('notificationsCloseBtn');
+
+    if (bellIcon && notificationsPopup) {
+        bellIcon.style.cursor = 'pointer';
+        bellIcon.addEventListener('click', function() {
+            notificationsPopup.classList.toggle('hidden');
+        });
+
+        notificationsCloseBtn.addEventListener('click', function() {
+            notificationsPopup.classList.add('hidden');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!bellIcon.contains(event.target) && !notificationsPopup.contains(event.target)) {
+                notificationsPopup.classList.add('hidden');
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>

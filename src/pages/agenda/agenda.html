@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillEx - Agenda</title>
+
+<link rel="stylesheet" href="agenda.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<header class="topbar">
+
+<div class="logo">
+    Skill<span>Ex</span>
+</div>
+
+<div class="search-box">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text"
+    placeholder="Buscar pessoas, habilidades ou publicações...">
+</div>
+
+<div class="top-icons">
+
+    <i class="fa-solid fa-house active"></i>
+    <i class="fa-solid fa-user-group"></i>
+    <i class="fa-regular fa-bell"></i>
+
+    <div class="profile-menu">
+
+        <img
+        id="profileBtn"
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Perfil">
+
+        <div id="dropdownMenu" class="dropdown-menu">
+
+            <a href="../perfil/perfil.html">
+                <i class="fa-regular fa-user"></i>
+                Meu Perfil
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-circle-question"></i>
+                Ajuda
+            </a>
+
+            <a href="../../login.html" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<aside class="sidebar">
+
+    <a href="../feed/feed.html" class="menu-item">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Feed</span>
+    </a>
+
+    <a href="../sugestoes/sugestoes.html" class="menu-item">
+        <i class="fa-regular fa-star"></i>
+        <span>Sugestões</span>
+    </a>
+
+    <a href="../estudantes/estudantes.html" class="menu-item">
+        <i class="fa-solid fa-users"></i>
+        <span>Estudantes</span>
+    </a>
+
+    <a href="../agenda/agenda.html" class="menu-item active">
+        <i class="fa-regular fa-calendar"></i>
+        <span>Agenda</span>
+    </a>
+
+    <a href="../avaliacoes/avaliacoes.html" class="menu-item">
+        <i class="fa-regular fa-star"></i>
+        <span>Avaliações</span>
+    </a>
+
+</aside>
+
+<section class="agenda-container">
+
+    <section class="agenda-header">
+
+        <h1>Minha Agenda</h1>
+
+        <p>
+            Organize suas aulas, acompanhe suas trocas de habilidades e gerencie seus horários.
+        </p>
+
+    </section>
+
+    <!-- ESTATÍSTICAS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+            <i class="fa-regular fa-calendar"></i>
+            <h2>5</h2>
+            <span>Aulas Agendadas</span>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-clock"></i>
+            <h2>2</h2>
+            <span>Solicitações Pendentes</span>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            <h2>8</h2>
+            <span>Trocas Realizadas</span>
+        </div>
+
+    </section>
+
+    <!-- PRÓXIMAS AULAS -->
+
+    <section class="agenda-section">
+
+        <h2>
+            <i class="fa-regular fa-calendar"></i>
+            Próximas Aulas
+        </h2>
+
+        <div class="class-card">
+
+            <div>
+                <h3>Violão com João Silva</h3>
+
+                <p>
+                    Você aprende Violão e ensina Inglês.
+                </p>
+
+                <span>
+                    15/08/2026 • 19:00
+                </span>
+            </div>
+
+            <button>Acessar Aula</button>
+
+        </div>
+
+        <div class="class-card">
+
+            <div>
+                <h3>Excel com Ana Souza</h3>
+
+                <p>
+                    Você aprende Excel e ensina Espanhol.
+                </p>
+
+                <span>
+                    18/08/2026 • 20:00
+                </span>
+            </div>
+
+            <button>Acessar Aula</button>
+
+        </div>
+
+    </section>
+
+    <!-- PENDENTES -->
+
+    <section class="agenda-section">
+
+        <h2>
+            <i class="fa-solid fa-clock"></i>
+            Solicitações Pendentes
+        </h2>
+
+        <div class="class-card">
+
+            <div>
+                <h3>Marketing Digital com Pedro</h3>
+
+                <p>
+                    Troca por aulas de Inglês.
+                </p>
+
+                <span>
+                    Aguardando confirmação
+                </span>
+            </div>
+
+            <button>Aceitar</button>
+
+        </div>
+
+    </section>
+
+    <!-- HISTÓRICO -->
+
+    <section class="agenda-section">
+
+        <h2>
+            <i class="fa-solid fa-check"></i>
+            Histórico de Aulas
+        </h2>
+
+        <div class="class-card">
+
+            <div>
+                <h3>Design Gráfico com Marina</h3>
+
+                <p>
+                    Aula concluída com sucesso.
+                </p>
+
+                <span>
+                    02/08/2026
+                </span>
+            </div>
+
+            <button>Avaliar</button>
+
+        </div>
+
+        <div class="class-card">
+
+            <div>
+                <h3>Fotografia com Lucas</h3>
+
+                <p>
+                    Aula concluída com sucesso.
+                </p>
+
+                <span>
+                    30/07/2026
+                </span>
+            </div>
+
+            <button>Avaliar</button>
+
+        </div>
+
+    </section>
+
+</section>
+
+</main>
+
+<!-- POPUP -->
+
+<div class="popup hidden" id="classPopup">
+
+<div class="popup-card">
+
+    <button class="popup-close">&times;</button>
+
+    <h2>Detalhes da Aula</h2>
+
+    <p><strong>Professor:</strong> João Silva</p>
+    <p><strong>Habilidade:</strong> Violão</p>
+    <p><strong>Data:</strong> 15/08/2026</p>
+    <p><strong>Horário:</strong> 19:00</p>
+    <p><strong>Modalidade:</strong> Online</p>
+    <p><strong>Troca:</strong> Você ensina Inglês.</p>
+
+</div>
+
+</div>
+
+<script src="../usuario.js"></script>
+<script>
+    User.requireAuth();
+</script>
+
+<script src="../navigation.js"></script>
+
+<script src="agenda.js"></script>
+
+</body>
+</html>

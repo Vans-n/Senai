@@ -298,6 +298,17 @@ generated/
 # OPTIONAL (DESCOMENTE SE NECESSÁRIO)
 # =========================================================
 
+# =========================================================
+# SKILLEX PROJECT SPECIFIC
+# =========================================================
+
+# Uploaded user files and images
+uploads/
+
+# Local development database
+skillex.db
+skillex.sqlite
+
 # Ignorar uploads locais
 # uploads/
 

@@ -118,7 +118,7 @@
 
 const cadastroForm = document.getElementById("cadastroForm");
 
-cadastroForm.addEventListener("submit", function(event) {
+cadastroForm.addEventListener("submit", async function(event) {
 
     event.preventDefault();
 
@@ -159,19 +159,30 @@ cadastroForm.addEventListener("submit", function(event) {
 
     const toast = document.getElementById("toast");
 
-    // Salva o usuário no localStorage
-    User.setLoggedUser({
-        nome: nome,
-        email: email,
-        senha: senha,
-        foto: 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
-    });
+    try {
+        const res = await User.apiFetch('/api/users', {
+            method: 'POST',
+            body: JSON.stringify({ name: nome, email: email, password: senha })
+        });
 
-    toast.style.display = "block";
+        if (!res.ok) {
+            const err = await res.json().catch(() => ({}));
+            alert(err.error || 'Erro ao criar usuário');
+            return;
+        }
 
-    setTimeout(() => {
-        window.location.href = "../feed/feed.html";
-    }, 2000);
+        const data = await res.json();
+        User.setAuth(data.user, data.token);
+
+        toast.style.display = "block";
+
+        setTimeout(() => {
+            window.location.href = "../perfil/completar-perfil.html";
+        }, 1000);
+    } catch (e) {
+        console.error(e);
+        User.showToast('Erro ao conectar com o servidor', 'error');
+    }
 
 });
 

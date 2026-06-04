@@ -60,7 +60,7 @@
             Ajuda
         </a>
 
-        <a href="../../login.html" class="logout">
+        <a href="../../pages/login.html" class="logout">
             <i class="fa-solid fa-right-from-bracket"></i>
             Sair
         </a>
@@ -80,28 +80,28 @@
 
             <div class="menu-item active">
                 <i class="fa-solid fa-bolt"></i>
-                <span>Habilidades</span>
+                <span>Feed</span>
             </div>
 
-            <div class="menu-item">
+            <a href="../sugestoes/sugestoes.html" class="menu-item">
                 <i class="fa-regular fa-star"></i>
                 <span>Sugestões</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../estudantes/estudantes.html" class="menu-item">
                 <i class="fa-solid fa-users"></i>
                 <span>Estudantes</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../agenda/agenda.html" class="menu-item">
                 <i class="fa-regular fa-calendar"></i>
                 <span>Agenda</span>
-            </div>
+            </a>
 
-            <div class="menu-item">
+            <a href="../avaliacoes/avaliacoes.html" class="menu-item">
                 <i class="fa-regular fa-star"></i>
                 <span>Avaliações</span>
-            </div>
+            </a>
 
         </aside>
 
@@ -164,6 +164,7 @@
             <label for="locationInput">Insira sua localização</label>
             <input id="locationInput" type="text" placeholder="Ex: Campus, Rua ou Bairro">
             <button type="button" id="locationSaveBtn">Salvar localização</button>
+            <button type="button" id="locationCurrentBtn" class="secondary-btn">Usar minha localização atual</button>
         </div>
 
         <div id="privacyPanel" class="post-option-panel hidden">
@@ -186,74 +187,8 @@
         <i class="fa-solid fa-paper-plane"></i>
         Publicar
     </button>
+    <div id="publishBusy" class="action-modal-busy hidden">Compactando e enviando imagem...</div>
 </div>
-
-            </div>
-
-            <!-- POST -->
-
-            <div class="post">
-
-                <div class="post-header">
-
-                    <div class="user-info">
-
-                        <img
-                            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                            alt="Avatar"
-                        >
-
-                        <div>
-                            <h3>Valéria Santos</h3>
-                            <span>há 2 minutos</span>
-                        </div>
-
-                    </div>
-
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-
-                </div>
-
-                <div class="post-content">
-
-                    Tenho facilidade em Matemática financeira e posso ajudar
-                    com exercícios, explicações e revisões.
-
-                    <br><br>
-
-                    Em troca, gostaria de praticar e aprender Inglês com
-                    alguém que tenha conhecimento na área.
-
-                    <br><br>
-
-                    Se você se interessa por essa troca de conhecimento,
-                    vamos conversar!
-
-                </div>
-
-                <div class="post-actions">
-
-                    <button>
-                        <i class="fa-solid fa-plus"></i>
-                        Ajudar
-                    </button>
-
-                    <button>
-                        <i class="fa-solid fa-xmark"></i>
-                        Preciso de ajuda
-                    </button>
-
-                    <button>
-                        <i class="fa-solid fa-minus"></i>
-                        Dica
-                    </button>
-
-                    <button>
-                        <i class="fa-solid fa-share-nodes"></i>
-                        Compartilhar
-                    </button>
-
-                </div>
 
             </div>
 
@@ -261,7 +196,58 @@
 
     </main>
 
+    <div id="imageModal" class="image-modal hidden">
+        <div class="image-modal-overlay"></div>
+        <div class="image-modal-card">
+            <button id="imageModalClose" class="modal-close">×</button>
+            <div class="image-modal-body">
+                <div class="image-modal-viewer">
+                    <img id="imageModalImg" src="#" alt="Imagem da publicação">
+                </div>
+                <div class="image-modal-comments">
+                    <div class="image-modal-meta">
+                        <h3>Comentários</h3>
+                        <p id="imageModalPrivacyText"></p>
+                        <p id="imageModalLocationText"></p>
+                    </div>
+                    <div id="commentsList" class="comments-list"></div>
+                    <div class="comment-form">
+                        <textarea id="commentInput" placeholder="Escreva um comentário..."></textarea>
+                        <button id="commentSubmit" class="publish-btn">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="actionModal" class="action-modal hidden">
+        <div id="actionModalOverlay" class="action-modal-overlay"></div>
+        <div class="action-modal-card">
+            <button id="actionModalClose" class="modal-close">×</button>
+            <div class="action-modal-body">
+                <h3 id="actionModalTitle">Editar publicação</h3>
+                <p id="actionModalMessage">Altere o texto da publicação e clique em salvar.</p>
+                <div class="action-modal-image">
+                    <img id="actionModalImagePreview" src="" alt="Preview da imagem" class="hidden">
+                    <div class="action-modal-image-controls">
+                        <input id="actionModalImageInput" type="file" accept="image/*" />
+                        <button id="actionModalRemoveImage" class="secondary-btn">Remover imagem</button>
+                    </div>
+                </div>
+                <textarea id="actionModalTextarea" placeholder="Digite o conteúdo da publicação"></textarea>
+                <div id="actionModalBusy" class="action-modal-busy hidden">Compactando e enviando imagem...</div>
+                <div class="action-modal-footer">
+                    <button id="actionModalCancel" class="secondary-btn">Cancelar</button>
+                    <button id="actionModalConfirm" class="publish-btn">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../usuario.js"></script>
+    <script>
+        User.requireAuth();
+    </script>
     <script src="../navigation.js"></script>
     <script src="feed.js"></script>
 
