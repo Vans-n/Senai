@@ -2,11 +2,12 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 
-const dbPath = path.join(__dirname, '..', 'data', 'app.db');
-fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-
 const initSqlPath = path.join(__dirname, 'init.sql');
 const initSql = fs.existsSync(initSqlPath) ? fs.readFileSync(initSqlPath, 'utf8') : '';
+
+const isTest = process.env.NODE_ENV === 'test';
+const dbPath = isTest ? ':memory:' : path.join(__dirname, '..', 'data', 'app.db');
+if (!isTest) fs.mkdirSync(path.dirname(dbPath), { recursive: true });
 
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {

@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const agendaRouter = require('./routes/agenda');
 const uploadsRouter = require('./routes/uploads');
+const skillsRouter = require('./routes/skills');
 
 const app = express();
 const corsOptions = {
@@ -30,6 +31,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/agenda', agendaRouter);
 app.use('/api/uploads', uploadsRouter);
+app.use('/api/skills', skillsRouter);
 
 // serve uploaded files
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -59,4 +61,9 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+}
+
+module.exports = app;
