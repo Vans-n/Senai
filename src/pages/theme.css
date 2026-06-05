@@ -1,0 +1,373 @@
+/* theme.css
+   Shared dark interface styles for SkillEx.
+   This stylesheet should load after page-specific CSS.
+   It replaces light surfaces with navy/grafite tones,
+   preserves the brand orange, and improves text contrast.
+*/
+
+:root {
+    --bg-base: #040B17;
+    --surface: #0B1831;
+    --surface-soft: #132341;
+    --surface-hover: #182B4A;
+    --surface-strong: #10203A;
+    --border: rgba(148, 163, 184, 0.16);
+    --border-strong: rgba(148, 163, 184, 0.22);
+    --text-primary: #F8FAFC;
+    --text-secondary: #A5B4CC;
+    --text-muted: #94A3B8;
+    --text-faint: #7C8BA8;
+    --text-placeholder: #7A8BA7;
+    --brand: #E66A2C;
+    --brand-soft: rgba(230, 106, 44, 0.16);
+    --brand-strong: #FFB57A;
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+    --overlay: rgba(0, 0, 0, 0.72);
+}
+
+html,
+body {
+    min-height: 100%;
+    background: var(--bg-base) !important;
+    color: var(--text-primary) !important;
+    transition: none !important;
+}
+
+body.dark-mode {
+    background: var(--bg-base) !important;
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode a,
+body.dark-mode button,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode label,
+body.dark-mode span,
+body.dark-mode p {
+    color: var(--text-secondary) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode strong,
+body.dark-mode .logo {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode ::placeholder {
+    color: var(--text-placeholder) !important;
+    opacity: 1;
+}
+
+body.dark-mode .topbar,
+body.dark-mode .sidebar,
+body.dark-mode .container,
+body.dark-mode main,
+body.dark-mode .agenda-container,
+body.dark-mode .feed,
+body.dark-mode .profile,
+body.dark-mode .login-container,
+body.dark-mode .form-container,
+body.dark-mode .banner,
+body.dark-mode .card,
+body.dark-mode .card-info,
+body.dark-mode .popup-card,
+body.dark-mode .post,
+body.dark-mode .create-post,
+body.dark-mode .stat-card,
+body.dark-mode .class-card,
+body.dark-mode .image-modal-card,
+body.dark-mode .action-modal-card,
+body.dark-mode .post-option-panel,
+body.dark-mode .search-box,
+body.dark-mode .image-preview,
+body.dark-mode .comment-item,
+body.dark-mode .dropdown-menu,
+body.dark-mode .profile-menu,
+body.dark-mode .action-modal-body,
+body.dark-mode .post-actions button,
+body.dark-mode .publish-btn,
+body.dark-mode .secondary-btn,
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+    box-shadow: none !important;
+}
+
+body.dark-mode .topbar {
+    background: #061426 !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+body.dark-mode .sidebar {
+    background: #071924 !important;
+    border-right: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+body.dark-mode .search-box {
+    background: #0E2444 !important;
+    border: 1px solid rgba(148, 163, 184, 0.1) !important;
+}
+
+body.dark-mode .menu-item {
+    color: var(--text-secondary) !important;
+}
+
+body.dark-mode .menu-item:hover {
+    background: #0E2A52 !important;
+}
+
+body.dark-mode .menu-item.active {
+    background: rgba(230, 106, 44, 0.12) !important;
+    color: var(--brand) !important;
+    font-weight: 600 !important;
+}
+
+body.dark-mode .menu-item.active i {
+    color: var(--brand) !important;
+}
+
+body.dark-mode .dropdown-menu {
+    background: #081328 !important;
+    border-color: rgba(148, 163, 184, 0.14) !important;
+}
+
+body.dark-mode .dropdown-menu a {
+    color: var(--text-primary) !important;
+}
+
+body.dark-mode .dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .dropdown-menu .logout {
+    color: var(--brand) !important;
+}
+
+body.dark-mode .dropdown-theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    width: 100%;
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+body.dark-mode .hero,
+body.dark-mode .hero-card,
+body.dark-mode .page-header,
+body.dark-mode .section,
+body.dark-mode .panel,
+body.dark-mode .box,
+body.dark-mode .content,
+body.dark-mode .wrapper,
+body.dark-mode .detail-card,
+body.dark-mode .info-box,
+body.dark-mode .badge-card,
+body.dark-mode .student-card,
+body.dark-mode .evaluation-card,
+body.dark-mode .profile-card,
+body.dark-mode .card-header,
+body.dark-mode .card-body,
+body.dark-mode .card-footer,
+body.dark-mode .list-card,
+body.dark-mode .card-grid,
+body.dark-mode .page-title,
+body.dark-mode .title-bar,
+body.dark-mode .table-container,
+body.dark-mode .data-table,
+body.dark-mode .field-wrapper,
+body.dark-mode .form-group,
+body.dark-mode .detail-panel,
+body.dark-mode .contact-card,
+body.dark-mode .modal,
+body.dark-mode .modal-content,
+body.dark-mode .input-group,
+body.dark-mode .student-card,
+body.dark-mode .schedule-card,
+body.dark-mode .task-card,
+body.dark-mode .item-card,
+body.dark-mode .achievement-card,
+body.dark-mode .profile-panel,
+body.dark-mode .activity-card,
+body.dark-mode .section-card,
+body.dark-mode .list-panel {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.dark-mode .skills {
+    background: transparent !important;
+}
+
+body.dark-mode .skills span {
+    background: rgba(230, 106, 44, 0.14) !important;
+    color: var(--brand) !important;
+    border: 1px solid rgba(230, 106, 44, 0.24) !important;
+}
+
+body.dark-mode .dropdown-theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .logo span {
+    color: var(--brand) !important;
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .class-card,
+body.dark-mode .post,
+body.dark-mode .create-post,
+body.dark-mode .popup-card,
+body.dark-mode .card,
+body.dark-mode .action-modal-card,
+body.dark-mode .image-modal-card,
+body.dark-mode .comment-item,
+body.dark-mode .image-preview,
+body.dark-mode .post-option-panel {
+    background: #0E1D36 !important;
+    border: 1px solid rgba(148, 163, 184, 0.10) !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28) !important;
+}
+
+body.dark-mode .stat-card i,
+body.dark-mode .class-card h3,
+body.dark-mode .agenda-header h1,
+body.dark-mode .agenda-section h2,
+body.dark-mode .feed h1,
+body.dark-mode .feed h2,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #FFFFFF !important;
+}
+
+body.dark-mode .stat-card span,
+body.dark-mode .agenda-header p,
+body.dark-mode .post-meta,
+body.dark-mode .post-subtitle,
+body.dark-mode .comment-item span,
+body.dark-mode p,
+body.dark-mode .text-muted {
+    color: var(--text-secondary) !important;
+}
+
+body.dark-mode .post-actions button,
+body.dark-mode .publish-btn,
+body.dark-mode .secondary-btn,
+body.dark-mode button:not(.dropdown-theme-toggle) {
+    background: rgba(230, 106, 44, 0.14) !important;
+    color: var(--brand) !important;
+    border: 1px solid rgba(230, 106, 44, 0.20) !important;
+}
+
+body.dark-mode .publish-btn:hover,
+body.dark-mode .post-actions button:hover,
+body.dark-mode .secondary-btn:hover,
+body.dark-mode button:hover {
+    background: rgba(230, 106, 44, 0.22) !important;
+}
+
+body.dark-mode [class*="card"],
+body.dark-mode [class*="panel"],
+body.dark-mode [class*="section"],
+body.dark-mode [class*="container"],
+body.dark-mode [class*="form"],
+body.dark-mode [class*="hero"],
+body.dark-mode [class*="row"],
+body.dark-mode [class*="box"],
+body.dark-mode [class*="list"],
+body.dark-mode [class*="grid"],
+body.dark-mode [class*="badge"],
+body.dark-mode [class*="header"],
+body.dark-mode [class*="footer"],
+body.dark-mode [class*="panel"],
+body.dark-mode [class*="detail"],
+body.dark-mode [class*="preview"] {
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    color: var(--text-primary) !important;
+    background: #081A30 !important;
+    border: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+    outline: 1px solid rgba(230, 106, 44, 0.38) !important;
+    box-shadow: 0 0 0 4px rgba(230, 106, 44, 0.10) !important;
+}
+
+body.dark-mode .search-box {
+    border: 1px solid rgba(148, 163, 184, 0.10) !important;
+}
+
+body.dark-mode .image-modal-overlay,
+body.dark-mode .option-popup,
+body.dark-mode .action-modal-overlay {
+    background: var(--overlay) !important;
+}
+
+body.dark-mode .post-image-wrapper,
+body.dark-mode .image-preview img,
+body.dark-mode .comment-item,
+body.dark-mode .post-actions button,
+body.dark-mode .stat-card {
+    border-radius: 22px !important;
+}
+
+body.dark-mode .top-icons i,
+body.dark-mode .search-box i,
+body.dark-mode .post-meta,
+body.dark-mode .post-subtitle,
+body.dark-mode .status-label {
+    color: var(--text-secondary) !important;
+}
+
+.theme-toggle-floating {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: #0F1F3C;
+    color: #F8FAFC;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle-floating:hover,
+body.dark-mode .dropdown-theme-toggle:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.06);
+}
