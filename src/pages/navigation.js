@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Atualiza o tema atual e ajusta o texto do item de menu/ botão de fallback
     function applyTheme(theme) {
         const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark-mode', isDark);
+        document.documentElement.classList.toggle('light-mode', !isDark);
         document.body.classList.toggle('dark-mode', isDark);
+        document.body.classList.toggle('light-mode', !isDark);
 
         const themeLabel = isDark ? 'Modo claro' : 'Modo escuro';
         const themeIcon = isDark ? darkModeIcon : lightModeIcon;
@@ -90,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function toggleTheme() {
-        const currentTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+        const currentTheme = (document.documentElement.classList.contains('dark-mode') || document.body.classList.contains('dark-mode')) ? 'light' : 'dark';
         applyTheme(currentTheme);
         localStorage.setItem(themeStorageKey, currentTheme);
     }

@@ -28,131 +28,225 @@
 html,
 body {
     min-height: 100%;
-    background: var(--bg-base) !important;
-    color: var(--text-primary) !important;
     transition: none !important;
 }
 
+html.dark-mode,
 body.dark-mode {
     background: var(--bg-base) !important;
     color: var(--text-primary) !important;
 }
 
-body.dark-mode a,
-body.dark-mode button,
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select,
-body.dark-mode label,
-body.dark-mode span,
-body.dark-mode p {
+html.light-mode,
+body.light-mode {
+    background: #F4EFE8 !important;
+    color: #111 !important;
+}
+
+html.light-mode .topbar , body.light-mode .topbar {
+    background: #fff !important;
+    border-bottom: 1px solid #E3D9D0 !important;
+}
+
+html.light-mode .sidebar , body.light-mode .sidebar {
+    background: #fff !important;
+    border-right: 1px solid #E3D9D0 !important;
+}
+
+html.light-mode .search-box , body.light-mode .search-box {
+    background: #F2ECE6 !important;
+    border: none !important;
+}
+
+html.light-mode .search-box input , body.light-mode .search-box input {
+    color: #111 !important;
+}
+
+html.light-mode .search-box input::placeholder , body.light-mode .search-box input::placeholder {
+    color: #9A8E87 !important;
+}
+
+html.light-mode .menu-item:hover , body.light-mode .menu-item:hover {
+    background: #F9F5F1 !important;
+}
+
+html.light-mode .menu-item.active , body.light-mode .menu-item.active {
+    background: #F5EEE7 !important;
+    color: #E66A2C !important;
+    font-weight: 600 !important;
+}
+
+html.light-mode .menu-item.active i , body.light-mode .menu-item.active i {
+    color: #E66A2C !important;
+}
+
+html.light-mode .create-post, body.light-mode .create-post,
+html.light-mode .popup-card, body.light-mode .popup-card,
+html.light-mode .image-modal-card , body.light-mode .image-modal-card {
+    background: #fff !important;
+    border-color: #EDE5DB !important;
+}
+
+html.light-mode .post-option-panel, body.light-mode .post-option-panel,
+html.light-mode .image-preview , body.light-mode .image-preview {
+    background: #F4EFE8 !important;
+    border-color: #E3D9D0 !important;
+}
+
+html.light-mode .post-actions button , body.light-mode .post-actions button {
+    background: #fff !important;
+    color: #6F625C !important;
+    border: 1px solid #E3D9D0 !important;
+}
+
+html.light-mode .post-actions button:hover , body.light-mode .post-actions button:hover {
+    background: #F4EFE8 !important;
+}
+
+html.light-mode .publish-btn , body.light-mode .publish-btn {
+    background: #E66A2C !important;
+    color: #fff !important;
+}
+
+html.light-mode .option-popup , body.light-mode .option-popup {
+    background: rgba(0, 0, 0, 0.45) !important;
+}
+
+html.light-mode .image-modal-overlay , body.light-mode .image-modal-overlay {
+    background: rgba(0, 0, 0, 0.45) !important;
+}
+
+html.light-mode .image-modal-body , body.light-mode .image-modal-body {
+    color: #111 !important;
+}
+
+html.light-mode .comment-item , body.light-mode .comment-item {
+    background: #fff !important;
+    border-color: #E3D9D0 !important;
+}
+
+html.light-mode .post-option-panel input[type="text"], body.light-mode .post-option-panel input[type="text"],
+html.light-mode .comment-form textarea , body.light-mode .comment-form textarea {
+    background: #fff !important;
+    border-color: #D8CFC7 !important;
+    color: #111 !important;
+}
+
+html.dark-mode a, body.dark-mode a,
+html.dark-mode button, body.dark-mode button,
+html.dark-mode input, body.dark-mode input,
+html.dark-mode textarea, body.dark-mode textarea,
+html.dark-mode select, body.dark-mode select,
+html.dark-mode label, body.dark-mode label,
+html.dark-mode span, body.dark-mode span,
+html.dark-mode p , body.dark-mode p {
     color: var(--text-secondary) !important;
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6,
-body.dark-mode strong,
-body.dark-mode .logo {
+html.dark-mode h1, body.dark-mode h1,
+html.dark-mode h2, body.dark-mode h2,
+html.dark-mode h3, body.dark-mode h3,
+html.dark-mode h4, body.dark-mode h4,
+html.dark-mode h5, body.dark-mode h5,
+html.dark-mode h6, body.dark-mode h6,
+html.dark-mode strong, body.dark-mode strong,
+html.dark-mode .logo , body.dark-mode .logo {
     color: #FFFFFF !important;
 }
 
-body.dark-mode ::placeholder {
+html.dark-mode ::placeholder , body.dark-mode ::placeholder {
     color: var(--text-placeholder) !important;
     opacity: 1;
 }
 
-body.dark-mode .topbar,
-body.dark-mode .sidebar,
-body.dark-mode .container,
-body.dark-mode main,
-body.dark-mode .agenda-container,
-body.dark-mode .feed,
-body.dark-mode .profile,
-body.dark-mode .login-container,
-body.dark-mode .form-container,
-body.dark-mode .banner,
-body.dark-mode .card,
-body.dark-mode .card-info,
-body.dark-mode .popup-card,
-body.dark-mode .post,
-body.dark-mode .create-post,
-body.dark-mode .stat-card,
-body.dark-mode .class-card,
-body.dark-mode .image-modal-card,
-body.dark-mode .action-modal-card,
-body.dark-mode .post-option-panel,
-body.dark-mode .search-box,
-body.dark-mode .image-preview,
-body.dark-mode .comment-item,
-body.dark-mode .dropdown-menu,
-body.dark-mode .profile-menu,
-body.dark-mode .action-modal-body,
-body.dark-mode .post-actions button,
-body.dark-mode .publish-btn,
-body.dark-mode .secondary-btn,
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
+html.dark-mode .topbar, body.dark-mode .topbar,
+html.dark-mode .sidebar, body.dark-mode .sidebar,
+html.dark-mode .container, body.dark-mode .container,
+html.dark-mode main, body.dark-mode main,
+html.dark-mode .agenda-container, body.dark-mode .agenda-container,
+html.dark-mode .feed, body.dark-mode .feed,
+html.dark-mode .profile, body.dark-mode .profile,
+html.dark-mode .login-container, body.dark-mode .login-container,
+html.dark-mode .form-container, body.dark-mode .form-container,
+html.dark-mode .banner, body.dark-mode .banner,
+html.dark-mode .card, body.dark-mode .card,
+html.dark-mode .card-info, body.dark-mode .card-info,
+html.dark-mode .popup-card, body.dark-mode .popup-card,
+html.dark-mode .post, body.dark-mode .post,
+html.dark-mode .create-post, body.dark-mode .create-post,
+html.dark-mode .stat-card, body.dark-mode .stat-card,
+html.dark-mode .class-card, body.dark-mode .class-card,
+html.dark-mode .image-modal-card, body.dark-mode .image-modal-card,
+html.dark-mode .action-modal-card, body.dark-mode .action-modal-card,
+html.dark-mode .post-option-panel, body.dark-mode .post-option-panel,
+html.dark-mode .search-box, body.dark-mode .search-box,
+html.dark-mode .image-preview, body.dark-mode .image-preview,
+html.dark-mode .comment-item, body.dark-mode .comment-item,
+html.dark-mode .dropdown-menu, body.dark-mode .dropdown-menu,
+html.dark-mode .profile-menu, body.dark-mode .profile-menu,
+html.dark-mode .action-modal-body, body.dark-mode .action-modal-body,
+html.dark-mode .post-actions button, body.dark-mode .post-actions button,
+html.dark-mode .publish-btn, body.dark-mode .publish-btn,
+html.dark-mode .secondary-btn, body.dark-mode .secondary-btn,
+html.dark-mode input, body.dark-mode input,
+html.dark-mode textarea, body.dark-mode textarea,
+html.dark-mode select , body.dark-mode select {
     background: var(--surface) !important;
     border-color: var(--border) !important;
     box-shadow: none !important;
 }
 
-body.dark-mode .topbar {
+html.dark-mode .topbar , body.dark-mode .topbar {
     background: #061426 !important;
     border-bottom: 1px solid rgba(148, 163, 184, 0.12) !important;
 }
 
-body.dark-mode .sidebar {
+html.dark-mode .sidebar , body.dark-mode .sidebar {
     background: #071924 !important;
     border-right: 1px solid rgba(148, 163, 184, 0.12) !important;
 }
 
-body.dark-mode .search-box {
+html.dark-mode .search-box , body.dark-mode .search-box {
     background: #0E2444 !important;
     border: 1px solid rgba(148, 163, 184, 0.1) !important;
 }
 
-body.dark-mode .menu-item {
+html.dark-mode .menu-item , body.dark-mode .menu-item {
     color: var(--text-secondary) !important;
 }
 
-body.dark-mode .menu-item:hover {
+html.dark-mode .menu-item:hover , body.dark-mode .menu-item:hover {
     background: #0E2A52 !important;
 }
 
-body.dark-mode .menu-item.active {
+html.dark-mode .menu-item.active , body.dark-mode .menu-item.active {
     background: rgba(230, 106, 44, 0.12) !important;
     color: var(--brand) !important;
     font-weight: 600 !important;
 }
 
-body.dark-mode .menu-item.active i {
+html.dark-mode .menu-item.active i , body.dark-mode .menu-item.active i {
     color: var(--brand) !important;
 }
 
-body.dark-mode .dropdown-menu {
+html.dark-mode .dropdown-menu , body.dark-mode .dropdown-menu {
     background: #081328 !important;
     border-color: rgba(148, 163, 184, 0.14) !important;
 }
 
-body.dark-mode .dropdown-menu a {
+html.dark-mode .dropdown-menu a , body.dark-mode .dropdown-menu a {
     color: var(--text-primary) !important;
 }
 
-body.dark-mode .dropdown-menu a:hover {
+html.dark-mode .dropdown-menu a:hover , body.dark-mode .dropdown-menu a:hover {
     background: rgba(255, 255, 255, 0.05) !important;
 }
 
-body.dark-mode .dropdown-menu .logout {
+html.dark-mode .dropdown-menu .logout , body.dark-mode .dropdown-menu .logout {
     color: var(--brand) !important;
 }
 
-body.dark-mode .dropdown-theme-toggle {
+html.dark-mode .dropdown-theme-toggle , body.dark-mode .dropdown-theme-toggle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -167,183 +261,183 @@ body.dark-mode .dropdown-theme-toggle {
     cursor: pointer;
 }
 
-body.dark-mode .hero,
-body.dark-mode .hero-card,
-body.dark-mode .page-header,
-body.dark-mode .section,
-body.dark-mode .panel,
-body.dark-mode .box,
-body.dark-mode .content,
-body.dark-mode .wrapper,
-body.dark-mode .detail-card,
-body.dark-mode .info-box,
-body.dark-mode .badge-card,
-body.dark-mode .student-card,
-body.dark-mode .evaluation-card,
-body.dark-mode .profile-card,
-body.dark-mode .card-header,
-body.dark-mode .card-body,
-body.dark-mode .card-footer,
-body.dark-mode .list-card,
-body.dark-mode .card-grid,
-body.dark-mode .page-title,
-body.dark-mode .title-bar,
-body.dark-mode .table-container,
-body.dark-mode .data-table,
-body.dark-mode .field-wrapper,
-body.dark-mode .form-group,
-body.dark-mode .detail-panel,
-body.dark-mode .contact-card,
-body.dark-mode .modal,
-body.dark-mode .modal-content,
-body.dark-mode .input-group,
-body.dark-mode .student-card,
-body.dark-mode .schedule-card,
-body.dark-mode .task-card,
-body.dark-mode .item-card,
-body.dark-mode .achievement-card,
-body.dark-mode .profile-panel,
-body.dark-mode .activity-card,
-body.dark-mode .section-card,
-body.dark-mode .list-panel {
+html.dark-mode .hero, body.dark-mode .hero,
+html.dark-mode .hero-card, body.dark-mode .hero-card,
+html.dark-mode .page-header, body.dark-mode .page-header,
+html.dark-mode .section, body.dark-mode .section,
+html.dark-mode .panel, body.dark-mode .panel,
+html.dark-mode .box, body.dark-mode .box,
+html.dark-mode .content, body.dark-mode .content,
+html.dark-mode .wrapper, body.dark-mode .wrapper,
+html.dark-mode .detail-card, body.dark-mode .detail-card,
+html.dark-mode .info-box, body.dark-mode .info-box,
+html.dark-mode .badge-card, body.dark-mode .badge-card,
+html.dark-mode .student-card, body.dark-mode .student-card,
+html.dark-mode .evaluation-card, body.dark-mode .evaluation-card,
+html.dark-mode .profile-card, body.dark-mode .profile-card,
+html.dark-mode .card-header, body.dark-mode .card-header,
+html.dark-mode .card-body, body.dark-mode .card-body,
+html.dark-mode .card-footer, body.dark-mode .card-footer,
+html.dark-mode .list-card, body.dark-mode .list-card,
+html.dark-mode .card-grid, body.dark-mode .card-grid,
+html.dark-mode .page-title, body.dark-mode .page-title,
+html.dark-mode .title-bar, body.dark-mode .title-bar,
+html.dark-mode .table-container, body.dark-mode .table-container,
+html.dark-mode .data-table, body.dark-mode .data-table,
+html.dark-mode .field-wrapper, body.dark-mode .field-wrapper,
+html.dark-mode .form-group, body.dark-mode .form-group,
+html.dark-mode .detail-panel, body.dark-mode .detail-panel,
+html.dark-mode .contact-card, body.dark-mode .contact-card,
+html.dark-mode .modal, body.dark-mode .modal,
+html.dark-mode .modal-content, body.dark-mode .modal-content,
+html.dark-mode .input-group, body.dark-mode .input-group,
+html.dark-mode .student-card, body.dark-mode .student-card,
+html.dark-mode .schedule-card, body.dark-mode .schedule-card,
+html.dark-mode .task-card, body.dark-mode .task-card,
+html.dark-mode .item-card, body.dark-mode .item-card,
+html.dark-mode .achievement-card, body.dark-mode .achievement-card,
+html.dark-mode .profile-panel, body.dark-mode .profile-panel,
+html.dark-mode .activity-card, body.dark-mode .activity-card,
+html.dark-mode .section-card, body.dark-mode .section-card,
+html.dark-mode .list-panel , body.dark-mode .list-panel {
     background: var(--surface) !important;
     border-color: var(--border) !important;
     color: var(--text-secondary) !important;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22) !important;
 }
 
-body.dark-mode .skills {
+html.dark-mode .skills , body.dark-mode .skills {
     background: transparent !important;
 }
 
-body.dark-mode .skills span {
+html.dark-mode .skills span , body.dark-mode .skills span {
     background: rgba(230, 106, 44, 0.14) !important;
     color: var(--brand) !important;
     border: 1px solid rgba(230, 106, 44, 0.24) !important;
 }
 
-body.dark-mode .dropdown-theme-toggle:hover {
+html.dark-mode .dropdown-theme-toggle:hover , body.dark-mode .dropdown-theme-toggle:hover {
     background: rgba(255, 255, 255, 0.05) !important;
 }
 
-body.dark-mode .logo span {
+html.dark-mode .logo span , body.dark-mode .logo span {
     color: var(--brand) !important;
 }
 
-body.dark-mode .stat-card,
-body.dark-mode .class-card,
-body.dark-mode .post,
-body.dark-mode .create-post,
-body.dark-mode .popup-card,
-body.dark-mode .card,
-body.dark-mode .action-modal-card,
-body.dark-mode .image-modal-card,
-body.dark-mode .comment-item,
-body.dark-mode .image-preview,
-body.dark-mode .post-option-panel {
+html.dark-mode .stat-card, body.dark-mode .stat-card,
+html.dark-mode .class-card, body.dark-mode .class-card,
+html.dark-mode .post, body.dark-mode .post,
+html.dark-mode .create-post, body.dark-mode .create-post,
+html.dark-mode .popup-card, body.dark-mode .popup-card,
+html.dark-mode .card, body.dark-mode .card,
+html.dark-mode .action-modal-card, body.dark-mode .action-modal-card,
+html.dark-mode .image-modal-card, body.dark-mode .image-modal-card,
+html.dark-mode .comment-item, body.dark-mode .comment-item,
+html.dark-mode .image-preview, body.dark-mode .image-preview,
+html.dark-mode .post-option-panel , body.dark-mode .post-option-panel {
     background: #0E1D36 !important;
     border: 1px solid rgba(148, 163, 184, 0.10) !important;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28) !important;
 }
 
-body.dark-mode .stat-card i,
-body.dark-mode .class-card h3,
-body.dark-mode .agenda-header h1,
-body.dark-mode .agenda-section h2,
-body.dark-mode .feed h1,
-body.dark-mode .feed h2,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3 {
+html.dark-mode .stat-card i, body.dark-mode .stat-card i,
+html.dark-mode .class-card h3, body.dark-mode .class-card h3,
+html.dark-mode .agenda-header h1, body.dark-mode .agenda-header h1,
+html.dark-mode .agenda-section h2, body.dark-mode .agenda-section h2,
+html.dark-mode .feed h1, body.dark-mode .feed h1,
+html.dark-mode .feed h2, body.dark-mode .feed h2,
+html.dark-mode h1, body.dark-mode h1,
+html.dark-mode h2, body.dark-mode h2,
+html.dark-mode h3 , body.dark-mode h3 {
     color: #FFFFFF !important;
 }
 
-body.dark-mode .stat-card span,
-body.dark-mode .agenda-header p,
-body.dark-mode .post-meta,
-body.dark-mode .post-subtitle,
-body.dark-mode .comment-item span,
-body.dark-mode p,
-body.dark-mode .text-muted {
+html.dark-mode .stat-card span, body.dark-mode .stat-card span,
+html.dark-mode .agenda-header p, body.dark-mode .agenda-header p,
+html.dark-mode .post-meta, body.dark-mode .post-meta,
+html.dark-mode .post-subtitle, body.dark-mode .post-subtitle,
+html.dark-mode .comment-item span, body.dark-mode .comment-item span,
+html.dark-mode p, body.dark-mode p,
+html.dark-mode .text-muted , body.dark-mode .text-muted {
     color: var(--text-secondary) !important;
 }
 
-body.dark-mode .post-actions button,
-body.dark-mode .publish-btn,
-body.dark-mode .secondary-btn,
-body.dark-mode button:not(.dropdown-theme-toggle) {
+html.dark-mode .post-actions button, body.dark-mode .post-actions button,
+html.dark-mode .publish-btn, body.dark-mode .publish-btn,
+html.dark-mode .secondary-btn, body.dark-mode .secondary-btn,
+html.dark-mode button:not(.dropdown-theme-toggle) , body.dark-mode button:not(.dropdown-theme-toggle) {
     background: rgba(230, 106, 44, 0.14) !important;
     color: var(--brand) !important;
     border: 1px solid rgba(230, 106, 44, 0.20) !important;
 }
 
-body.dark-mode .publish-btn:hover,
-body.dark-mode .post-actions button:hover,
-body.dark-mode .secondary-btn:hover,
-body.dark-mode button:hover {
+html.dark-mode .publish-btn:hover, body.dark-mode .publish-btn:hover,
+html.dark-mode .post-actions button:hover, body.dark-mode .post-actions button:hover,
+html.dark-mode .secondary-btn:hover, body.dark-mode .secondary-btn:hover,
+html.dark-mode button:hover , body.dark-mode button:hover {
     background: rgba(230, 106, 44, 0.22) !important;
 }
 
-body.dark-mode [class*="card"],
-body.dark-mode [class*="panel"],
-body.dark-mode [class*="section"],
-body.dark-mode [class*="container"],
-body.dark-mode [class*="form"],
-body.dark-mode [class*="hero"],
-body.dark-mode [class*="row"],
-body.dark-mode [class*="box"],
-body.dark-mode [class*="list"],
-body.dark-mode [class*="grid"],
-body.dark-mode [class*="badge"],
-body.dark-mode [class*="header"],
-body.dark-mode [class*="footer"],
-body.dark-mode [class*="panel"],
-body.dark-mode [class*="detail"],
-body.dark-mode [class*="preview"] {
+html.dark-mode [class*="card"], body.dark-mode [class*="card"],
+html.dark-mode [class*="panel"], body.dark-mode [class*="panel"],
+html.dark-mode [class*="section"], body.dark-mode [class*="section"],
+html.dark-mode [class*="container"], body.dark-mode [class*="container"],
+html.dark-mode [class*="form"], body.dark-mode [class*="form"],
+html.dark-mode [class*="hero"], body.dark-mode [class*="hero"],
+html.dark-mode [class*="row"], body.dark-mode [class*="row"],
+html.dark-mode [class*="box"], body.dark-mode [class*="box"],
+html.dark-mode [class*="list"], body.dark-mode [class*="list"],
+html.dark-mode [class*="grid"], body.dark-mode [class*="grid"],
+html.dark-mode [class*="badge"], body.dark-mode [class*="badge"],
+html.dark-mode [class*="header"], body.dark-mode [class*="header"],
+html.dark-mode [class*="footer"], body.dark-mode [class*="footer"],
+html.dark-mode [class*="panel"], body.dark-mode [class*="panel"],
+html.dark-mode [class*="detail"], body.dark-mode [class*="detail"],
+html.dark-mode [class*="preview"] , body.dark-mode [class*="preview"] {
     background: var(--surface) !important;
     border-color: var(--border) !important;
     color: var(--text-secondary) !important;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22) !important;
 }
 
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
+html.dark-mode input, body.dark-mode input,
+html.dark-mode textarea, body.dark-mode textarea,
+html.dark-mode select , body.dark-mode select {
     color: var(--text-primary) !important;
     background: #081A30 !important;
     border: 1px solid rgba(148, 163, 184, 0.12) !important;
 }
 
-body.dark-mode input:focus,
-body.dark-mode textarea:focus,
-body.dark-mode select:focus {
+html.dark-mode input:focus, body.dark-mode input:focus,
+html.dark-mode textarea:focus, body.dark-mode textarea:focus,
+html.dark-mode select:focus , body.dark-mode select:focus {
     outline: 1px solid rgba(230, 106, 44, 0.38) !important;
     box-shadow: 0 0 0 4px rgba(230, 106, 44, 0.10) !important;
 }
 
-body.dark-mode .search-box {
+html.dark-mode .search-box , body.dark-mode .search-box {
     border: 1px solid rgba(148, 163, 184, 0.10) !important;
 }
 
-body.dark-mode .image-modal-overlay,
-body.dark-mode .option-popup,
-body.dark-mode .action-modal-overlay {
+html.dark-mode .image-modal-overlay, body.dark-mode .image-modal-overlay,
+html.dark-mode .option-popup, body.dark-mode .option-popup,
+html.dark-mode .action-modal-overlay , body.dark-mode .action-modal-overlay {
     background: var(--overlay) !important;
 }
 
-body.dark-mode .post-image-wrapper,
-body.dark-mode .image-preview img,
-body.dark-mode .comment-item,
-body.dark-mode .post-actions button,
-body.dark-mode .stat-card {
+html.dark-mode .post-image-wrapper, body.dark-mode .post-image-wrapper,
+html.dark-mode .image-preview img, body.dark-mode .image-preview img,
+html.dark-mode .comment-item, body.dark-mode .comment-item,
+html.dark-mode .post-actions button, body.dark-mode .post-actions button,
+html.dark-mode .stat-card , body.dark-mode .stat-card {
     border-radius: 22px !important;
 }
 
-body.dark-mode .top-icons i,
-body.dark-mode .search-box i,
-body.dark-mode .post-meta,
-body.dark-mode .post-subtitle,
-body.dark-mode .status-label {
+html.dark-mode .top-icons i, body.dark-mode .top-icons i,
+html.dark-mode .search-box i, body.dark-mode .search-box i,
+html.dark-mode .post-meta, body.dark-mode .post-meta,
+html.dark-mode .post-subtitle, body.dark-mode .post-subtitle,
+html.dark-mode .status-label , body.dark-mode .status-label {
     color: var(--text-secondary) !important;
 }
 
@@ -367,6 +461,7 @@ body.dark-mode .status-label {
 }
 
 .theme-toggle-floating:hover,
+html.dark-mode .dropdown-theme-toggle:hover,
 body.dark-mode .dropdown-theme-toggle:hover {
     transform: translateY(-1px);
     background: rgba(255, 255, 255, 0.06);
